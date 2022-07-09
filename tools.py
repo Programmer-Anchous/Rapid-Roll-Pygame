@@ -12,12 +12,12 @@ def load_image(file_name, *, ext='png', color_key=True, scale=()):
 
 # animation_functions_start_________________________________________________#
 def load_animation(path, frame_durations, animation_frames) -> list:
-    animation_name = path.split('\\')[-1]
+    animation_name = path.split('/')[-1]
     animation_frame_data = []
     n = 0
     for frame in frame_durations:
         animation_frame_id = animation_name + '_' + str(n)
-        img_loc = path + '\\' + animation_frame_id + '.png'
+        img_loc = path + '/' + animation_frame_id + '.png'
         animation_image = pygame.image.load(img_loc).convert()
         animation_image = pygame.transform.scale(animation_image,
                                                  (animation_image.get_width(), animation_image.get_height()))
