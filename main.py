@@ -15,55 +15,55 @@ FPS = 100
 pygame.mouse.set_visible(False)
 
 # load_images_start_________________________________________________________#
-ball_image = load_image(r'sprites\red_ball')
-tile_image = load_image(r'sprites\tile_1')
-thorn_tile_image = load_image(r'sprites\thorn_tile')
+ball_image = load_image(r'sprites/red_ball')
+tile_image = load_image(r'sprites/tile_1')
+thorn_tile_image = load_image(r'sprites/thorn_tile')
 
-new_game_image = load_image(r'buttons\new_game_image')
-new_game_pressed_image = load_image(r'buttons\new_game_pressed_image')
+new_game_image = load_image(r'buttons/new_game_image')
+new_game_pressed_image = load_image(r'buttons/new_game_pressed_image')
 
-continue_image = load_image(r'buttons\continue_image')
-continue_pressed_image = load_image(r'buttons\continue_pressed_image')
+continue_image = load_image(r'buttons/continue_image')
+continue_pressed_image = load_image(r'buttons/continue_pressed_image')
 
-level_image = load_image(r'buttons\level_image')
-level_pressed_image = load_image(r'buttons\level_pressed_image')
+level_image = load_image(r'buttons/level_image')
+level_pressed_image = load_image(r'buttons/level_pressed_image')
 
-back_image = load_image(r'buttons\back_image')
-back_pressed_image = load_image(r'buttons\back_pressed_image')
+back_image = load_image(r'buttons/back_image')
+back_pressed_image = load_image(r'buttons/back_pressed_image')
 
-back_1_image = load_image(r'buttons\back_1_image', scale=(1, 1))
-back_1_pressed_image = load_image(r'buttons\back_1_pressed_image', scale=(1, 1))
+back_1_image = load_image(r'buttons/back_1_image', scale=(1, 1))
+back_1_pressed_image = load_image(r'buttons/back_1_pressed_image', scale=(1, 1))
 
-yes_image = load_image(r'buttons\yes_image')
-yes_pressed_image = load_image(r'buttons\yes_pressed_image')
+yes_image = load_image(r'buttons/yes_image')
+yes_pressed_image = load_image(r'buttons/yes_pressed_image')
 
-no_image = load_image(r'buttons\no_image')
-no_pressed_image = load_image(r'buttons\no_pressed_image')
+no_image = load_image(r'buttons/no_image')
+no_pressed_image = load_image(r'buttons/no_pressed_image')
 
-records_image = load_image(r'buttons\records_image')
-records_presed_image = load_image(r'buttons\records_pressed_image')
+records_image = load_image(r'buttons/records_image')
+records_presed_image = load_image(r'buttons/records_pressed_image')
 
-one_image = load_image(r'buttons\one_image')
-one_pressed_image = load_image(r'buttons\one_pressed_image')
-two_image = load_image(r'buttons\two_image')
-two_pressed_image = load_image(r'buttons\two_pressed_image')
-three_image = load_image(r'buttons\three_image')
-three_pressed_image = load_image(r'buttons\three_pressed_image')
+one_image = load_image(r'buttons/one_image')
+one_pressed_image = load_image(r'buttons/one_pressed_image')
+two_image = load_image(r'buttons/two_image')
+two_pressed_image = load_image(r'buttons/two_pressed_image')
+three_image = load_image(r'buttons/three_image')
+three_pressed_image = load_image(r'buttons/three_pressed_image')
 
 # background_image = load_image('background_image', scale=(20, 20))
 
-top_spikes = load_image(r'sprites\spikes')
-top_bar = load_image(r'sprites\top_bar')
-life_bar = load_image(r'sprites\life_bar')
+top_spikes = load_image(r'sprites/spikes')
+top_bar = load_image(r'sprites/top_bar')
+life_bar = load_image(r'sprites/life_bar')
 
-cursor_img = load_image(r'sprites\orange_cursor')
+cursor_img = load_image(r'sprites/orange_cursor')
 
-your_score_label = load_image(r'labels\your_score_label', scale=(5, 5))
-save_label = load_image(r'labels\save_label', scale=(5, 5))
+your_score_label = load_image(r'labels/your_score_label', scale=(5, 5))
+save_label = load_image(r'labels/save_label', scale=(5, 5))
 
-one_level_label = load_image(r'labels\one_level_label', scale=(2, 2))
-two_level_label = load_image(r'labels\two_level_label', scale=(2, 2))
-three_level_label = load_image(r'labels\three_level_label', scale=(2, 2))
+one_level_label = load_image(r'labels/one_level_label', scale=(2, 2))
+two_level_label = load_image(r'labels/two_level_label', scale=(2, 2))
+three_level_label = load_image(r'labels/three_level_label', scale=(2, 2))
 # load_images_end___________________________________________________________#
 
 
@@ -261,7 +261,7 @@ three_button = Button(three_image, three_pressed_image, (WINDOW_SIZE[0] // 2 - t
 
 
 def save_game(score, tiles_for_ball, thorn_tiles_for_ball, life_hearts, ball):
-    with open(r'SAV\last_game.txt', 'w', encoding='utf-8') as file:
+    with open(r'SAV/last_game.txt', 'w', encoding='utf-8') as file:
         if ball[2] > 0:
             file.write(f'{score}\n')
 
@@ -291,12 +291,12 @@ def save_game(score, tiles_for_ball, thorn_tiles_for_ball, life_hearts, ball):
 
 
 def update_game():
-    with open(r'SAV\last_game.txt', 'w', encoding='utf-8') as file:
+    with open(r'SAV/last_game.txt', 'w', encoding='utf-8') as file:
         file.write('---')
 
 
 def load_game():
-    with open(r'SAV\last_game.txt', 'r', encoding='utf-8') as file:
+    with open(r'SAV/last_game.txt', 'r', encoding='utf-8') as file:
         data = file.read()
     if data == '---':
         return []
@@ -325,17 +325,17 @@ def load_game():
 
 
 def save_record(result):
-    with open(r'SAV\records.txt', 'a', encoding='utf-8') as file:
+    with open(r'SAV/records.txt', 'a', encoding='utf-8') as file:
         file.write(f'\n{result}')
     records = load_records()
     if len(records) > 15:
         records = records[:15]
-        with open(r'SAV\records.txt', 'w', encoding='utf-8') as file:
+        with open(r'SAV/records.txt', 'w', encoding='utf-8') as file:
             file.write('\n'.join(map(str, records)))
 
 
 def load_records():
-    with open(r'SAV\records.txt', 'r', encoding='utf-8') as file:
+    with open(r'SAV/records.txt', 'r', encoding='utf-8') as file:
         data = file.read().strip().split('\n')
     if data == ['']:
         return []
@@ -344,16 +344,16 @@ def load_records():
 
 
 def save_level(level):
-    with open(r'SAV\current_level.txt', 'r', encoding='utf-8') as file:
+    with open(r'SAV/current_level.txt', 'r', encoding='utf-8') as file:
         level_from_file = int(file.read().strip())
     if level != level_from_file:
         update_game()
-        with open(r'SAV\current_level.txt', 'w', encoding='utf-8') as file:
+        with open(r'SAV/current_level.txt', 'w', encoding='utf-8') as file:
             file.write(str(level))
 
 
 def load_level():
-    with open(r'SAV\current_level.txt', 'r', encoding='utf-8') as file:
+    with open(r'SAV/current_level.txt', 'r', encoding='utf-8') as file:
         level = int(file.read())
     return level
 
