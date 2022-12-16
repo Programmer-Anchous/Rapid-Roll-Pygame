@@ -1,7 +1,7 @@
 # Rapid Roll Remake
 
 ## Prerequisites
-- **pygame 2.1.2**
+- **Pygame 2.1.2**
 - **Python 3.8.0**
 
 ## Gameplay
